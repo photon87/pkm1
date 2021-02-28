@@ -1,0 +1,95 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.card{
+    background-color: rgb(51, 51, 51);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.3);
+  }
+
+.cardName{
+    font-size:large;
+    text-align: center;
+}
+
+.set{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size:small;
+    padding: 3px;
+}
+
+.setSymbol{
+    background-color: white;
+    border-radius: 6px;
+    padding: 3px;
+    width: auto;
+    height: 20px;
+}
+
+.rarity{
+    font-size:x-small;
+    margin: 2px;
+}
+
+.number{
+    font-size:x-small;
+    margin: 2px;
+}
+
+.setDate{
+    font-size:x-small;
+    margin: 2px;
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    font-size:x-small;
+    padding: 2px;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+body {
+    background-color: rgb(26, 26, 26);
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    font-family: sans-serif;
+}
+
+header{
+    font-family: sans-serif;
+}
