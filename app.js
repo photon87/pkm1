@@ -170,9 +170,6 @@ function getCards() {
                             const priceType = document.createElement('span')
                             priceType.textContent = key
                             price.appendChild(priceType)
-                            const divider = document.createElement('span')
-                            divider.textContent = '--------'
-                            price.appendChild(divider)
                             const priceAmount = document.createElement('span')
                             priceAmount.textContent = `$${parseFloat(value.market).toFixed(2)}`
                             price.appendChild(priceAmount)
