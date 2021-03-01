@@ -37,6 +37,10 @@ const setLogoDiv = document.querySelector('.setLogoDiv')
 const select = document.createElement("select");
 select.onchange = getCards
 
+const sizeBox = document.createElement("input");
+sizeBox.setAttribute("type", "checkbox");
+sizeBox.onchange = getCards
+
 getSets();
 //getCards();
 
@@ -76,11 +80,16 @@ function getSets() {
                 setSymbols.appendChild(symbol)
             }
 
-            const label = document.createElement("label");
-            label.innerHTML = "Choose a set: "
-            label.htmlFor = "sets";
+            const selectLabel = document.createElement("label");
+            selectLabel.innerHTML = "Choose a set: "
+            selectLabel.htmlFor = "sets";
 
-            filterDiv.appendChild(label).appendChild(select);
+            const sizeBoxLabel = document.createElement("label");
+            sizeBoxLabel.innerHTML = "Use High Res Images  "
+            sizeBoxLabel.htmlFor = "size";
+
+            filterDiv.appendChild(selectLabel).appendChild(select);
+            filterDiv.appendChild(sizeBoxLabel).appendChild(sizeBox)
             filterDiv.appendChild(setSymbols)
 
         })
@@ -117,7 +126,8 @@ function getCards() {
                 cards.data.forEach(card => {
                     const div = document.createElement('div')
                     div.className = 'card'
-                    div.style = `background: linear-gradient(#000, ${pkmnColors[card.types[0]]});`
+                    const gradColor = card.types ? pkmnColors[card.types[0]] : '#FFF'
+                    div.style = `background: linear-gradient(#000, ${gradColor});`
 
                     const name = document.createElement('span')
                     name.className = 'cardName'
@@ -172,7 +182,7 @@ function getCards() {
                     }
 
                     const image = document.createElement('img')
-                    image.src = card.images.small
+                    image.src = sizeBox.checked ? card.images.large : card.images.small
                     div.appendChild(image)
 
 
